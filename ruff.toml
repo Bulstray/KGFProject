@@ -1,5 +1,6 @@
 src = [
     'src',
+	'fastapi-kgf'
 ]
 exclude = [
     ".bzr",
