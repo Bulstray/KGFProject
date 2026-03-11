@@ -2,6 +2,7 @@ from fastapi import APIRouter
 
 from api.dependencies.auth.backend import auth_backend
 from core.config import settings
+from core.schemas.user import UserRead, UserCreate
 
 from .fastapi_users_router import fastapi_users
 
@@ -10,8 +11,18 @@ router = APIRouter(
     tags=["Auth"],
 )
 
+# login
+# logout
 router.include_router(
     router=fastapi_users.get_auth_router(
         auth_backend,
     ),
+)
+
+
+router.include_router(
+    router=fastapi_users.get_register_router(
+        UserRead,
+        UserCreate,
+    )
 )
