@@ -94,3 +94,5 @@ select = [
 	"FURB", # refurb (FURB)
 	"FAST" # fastapi
 ]
+
+ignore = ["ARG001"]
