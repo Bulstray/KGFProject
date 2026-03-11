@@ -8,7 +8,7 @@ class DatabaseConfig(BaseModel):
 
 
 class Settings(BaseSettings):
-    database: DatabaseConfig = DatabaseConfig()
+    db: DatabaseConfig = DatabaseConfig()
 
 
 settings = Settings()
