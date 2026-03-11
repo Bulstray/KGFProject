@@ -7,8 +7,8 @@ class DatabaseConfig(BaseModel):
     echo: bool = False
 
 
-
 class Settings(BaseSettings):
     database: DatabaseConfig = DatabaseConfig()
+
 
 settings = Settings()
