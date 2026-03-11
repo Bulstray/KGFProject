@@ -10,10 +10,10 @@ from core.config import settings
 
 
 class DatabaseHelper:
-    def __init__(self, url: str, echo: bool) -> None:
+    def __init__(self, url: str) -> None:
         self.engine = create_async_engine(
             url=url,
-            echo=echo,
+            echo=settings.db.echo,
         )
 
         self.session_factory = async_sessionmaker(
@@ -30,5 +30,4 @@ class DatabaseHelper:
 
 db_helper = DatabaseHelper(
     url=settings.db.url,
-    echo=settings.db.echo,
 )
