@@ -1,9 +1,9 @@
+from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
 
-from core.models import Base, db_helper
-
 from fastapi import FastAPI
-from typing import AsyncIterator
+
+from core.models import Base, db_helper
 
 
 @asynccontextmanager
