@@ -3,9 +3,13 @@ from fastapi import FastAPI
 
 from app_lifespan import lifespan
 
+from api import router
+
 app = FastAPI(
     lifespan=lifespan,
 )
+
+app.include_router(router)
 
 
 if __name__ == "__main__":
