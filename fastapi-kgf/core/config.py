@@ -7,8 +7,13 @@ class DatabaseConfig(BaseModel):
     echo: bool = False
 
 
+class AccessToken(BaseModel):
+    lifetime_seconds: int = 3600
+
+
 class Settings(BaseSettings):
     db: DatabaseConfig = DatabaseConfig()
+    access_token: AccessToken = AccessToken()
 
 
 settings = Settings()
