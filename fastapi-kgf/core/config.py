@@ -22,9 +22,15 @@ class ApiPrefix(BaseModel):
     prefix: str = "/api"
     v1: ApiV1Prefix = ApiV1Prefix()
 
+    @property
+    def bearer_token_url(self) -> str:
+        parts = (self.prefix, self.v1.prefix, self.v1.auth, "/login")
+        path = "".join(parts)
+        return path.removeprefix("/")
+
 
 class Settings(BaseSettings):
-    model_settings = SettingsConfigDict(
+    model_config = SettingsConfigDict(
         env_file=".env",
         case_sensitive=False,
         env_nested_delimiter="__",
