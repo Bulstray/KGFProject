@@ -2,7 +2,7 @@ from fastapi import APIRouter
 
 from api.dependencies.auth.backend import auth_backend
 from core.config import settings
-from core.schemas.user import UserRead, UserCreate
+from core.schemas.user import UserCreate, UserRead
 
 from .fastapi_users_router import fastapi_users
 
@@ -19,10 +19,10 @@ router.include_router(
     ),
 )
 
-
+# register
 router.include_router(
     router=fastapi_users.get_register_router(
         UserRead,
         UserCreate,
-    )
+    ),
 )
