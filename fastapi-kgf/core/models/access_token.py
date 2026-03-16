@@ -6,11 +6,12 @@ from fastapi_users_db_sqlalchemy.access_token import (
 )
 from sqlalchemy import ForeignKey, Integer
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from core.types import UserIdType
 
 from .base import Base
+
 
 if TYPE_CHECKING:
     from sqlalchemy.ext.asyncio import AsyncSession
